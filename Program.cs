@@ -4,7 +4,7 @@ using ClosedXML.Excel;
 
 namespace TicketGenerator
 {
-    class Program
+    public class Program
     {
         const string FilePath = "journal.xlsx";
 
@@ -114,7 +114,7 @@ namespace TicketGenerator
             }
         }
 
-        static string ReadFirstName()
+       public static string ReadFirstName()
         {
             while (true)
             {
