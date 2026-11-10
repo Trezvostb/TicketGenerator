@@ -5,8 +5,6 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!-- Полное исключение папки тестов из основного проекта -->
-    <DefaultItemExcludes>$(DefaultItemExcludes);TicketGenerator.Tests\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
