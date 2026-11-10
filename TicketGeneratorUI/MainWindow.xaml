@@ -1,0 +1,102 @@
+﻿<Window x:Class="TicketGeneratorUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Генератор билетов" Height="460" Width="450" 
+        WindowStartupLocation="CenterScreen" FontFamily="Segoe UI" Loaded="Window_Loaded">
+    
+    <Window.Background>
+        <!-- Мягкий градиентный фон окна -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#F0F4F8" Offset="0.0" />
+            <GradientStop Color="#D9E2EC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Window.Resources>
+        <!-- Пользовательский стиль для градиентной кнопки с анимацией наведения -->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#3B82F6" Offset="0"/>
+                        <GradientStop Color="#6366F1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <!-- Усиление цвета при наведении -->
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Color="#2563EB" Offset="0"/>
+                                            <GradientStop Color="#4F46E5" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#E2E8F0"/>
+                                <Setter Property="Foreground" Value="#94A3B8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Парящая белая карточка с объемной тенью -->
+        <Border Background="White" Margin="30" Padding="35,30,35,35" CornerRadius="16">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="40" ShadowDepth="10" Opacity="0.08" Color="#102A43"/>
+            </Border.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Типографика в стиле современных SaaS-решений -->
+                <TextBlock Text="ВЫБЕРИТЕ ГРУППУ" FontSize="12" Foreground="#829AB1" FontWeight="Heavy" Margin="0,0,0,8" />
+                <ComboBox x:Name="GroupComboBox" Grid.Row="1" Height="42" FontSize="15" Margin="0,0,0,25" SelectionChanged="GroupComboBox_SelectionChanged">
+                    <ComboBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+                    </ComboBox.Resources>
+                </ComboBox>
+
+                <TextBlock Grid.Row="2" Text="ВЫБЕРИТЕ СТУДЕНТА" FontSize="12" Foreground="#829AB1" FontWeight="Heavy" Margin="0,0,0,8" />
+                <ComboBox x:Name="StudentComboBox" Grid.Row="3" Height="42" FontSize="15" Margin="0,0,0,35" SelectionChanged="StudentComboBox_SelectionChanged">
+                    <ComboBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+                    </ComboBox.Resources>
+                </ComboBox>
+
+                <!-- Применение нового стиля к кнопке -->
+                <Button x:Name="GenerateButton" Grid.Row="4" Content="Сгенерировать билет" 
+                        Style="{StaticResource ModernButton}" Height="50" VerticalAlignment="Bottom" 
+                        Click="GenerateButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

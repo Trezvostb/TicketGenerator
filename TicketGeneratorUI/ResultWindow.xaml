@@ -1,0 +1,21 @@
+<Window x:Class="TicketGeneratorUI.ResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ваш билет" Height="350" Width="450" 
+        WindowStartupLocation="CenterOwner" Background="#F4F6F9" FontFamily="Segoe UI"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Border Background="White" Margin="20" Padding="25" CornerRadius="10">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.1" Color="Black"/>
+        </Border.Effect>
+        <StackPanel>
+            <TextBlock x:Name="TicketTitle" FontSize="22" Foreground="#0078D4" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <ScrollViewer Height="160" VerticalScrollBarVisibility="Auto" Margin="0,0,0,20">
+                <TextBlock x:Name="QuestionsText" FontSize="15" Foreground="#333" TextWrapping="Wrap" LineHeight="24"/>
+            </ScrollViewer>
+            <Border Background="#FFF3CD" CornerRadius="5" Padding="10" HorizontalAlignment="Center">
+                <TextBlock Text="Нажмите ESC для закрытия" FontSize="13" Foreground="#856404" FontWeight="SemiBold"/>
+            </Border>
+        </StackPanel>
+    </Border>
+</Window>
