@@ -1,6 +1,0 @@
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.csproj.AssemblyReference.cache
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.GeneratedMSBuildEditorConfig.editorconfig
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.AssemblyInfoInputs.cache
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.AssemblyInfo.cs
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.csproj.CoreCompileInputs.cache
-D:\TicketGenerator\obj\Debug\net10.0\TicketGenerator.sourcelink.json
